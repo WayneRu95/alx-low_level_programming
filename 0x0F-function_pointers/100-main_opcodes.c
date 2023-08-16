@@ -1,35 +1,35 @@
+/*
+ * File: 100-main_opcodes.c
+ * Auth: Wayne R Masakure
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
+
 /**
- * main - prints opcode of own main function
+ * main - Prints the opcodes of itself.
+ * @argc: Number of arguments supplied to the program.
+ * @argv: An array of pointers to the arguments.
  *
- * @argc: argument count
- * @argv: arg value
- * Return: int
+ * Return: Always 0.
  */
 int main(int argc, char *argv[])
 {
-	int x, i;
-	unsigned char *p;
+	int bytes, index;
+	int (*address)(int, char **) = main;
+	unsigned char opcode;
 
 	if (argc != 2)
 	{
 		printf("Error\n");
 		exit(1);
 	}
-	x = atoi(argv[1]);
-	if (x < 0)
+
+	bytes = atoi(argv[1]);
+
+	if (bytes < 0)
 	{
 		printf("Error\n");
 		exit(2);
 	}
-	p = (unsigned char *)main;
-	i = 0;
-	if (x > 0)
-	{
-		while (i < (x - 1))
-			printf("%02hhx ", p[i++]);
-		printf("%hhx\n", p[i]);
-	}
-	return (0);
 }

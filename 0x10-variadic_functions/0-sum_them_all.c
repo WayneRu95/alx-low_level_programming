@@ -6,10 +6,11 @@
 #include <stdarg.h>
 /**
  * sum_them_all - Return the sum of all the arguments.
- * @n: Number of arguments.
- * @...: List of arguments.
+ * @n: The number of parameters passed to the function.
+ * @...: A variable number of paramters to calculate the sum of.
  *
- * Return: Sum
+ * Return: Return: If n == 0 - 0.
+ *         Otherwise - the sum of all parameters.
  */
 
 int sum_them_all(const unsigned int n, ...)

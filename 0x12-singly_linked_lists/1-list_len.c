@@ -1,5 +1,5 @@
 #include "lists.h"
-
+#include <stddef.h>
 /**
  * list_len - Calculate the number of elements.
  * @h: Pointer to a list.
@@ -18,4 +18,4 @@ size_t list_len(const list_t *h)
 		temp = temp->next;
 	}
 	return (nodes);
-}i
+}
